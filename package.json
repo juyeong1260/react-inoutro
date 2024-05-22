@@ -1,0 +1,58 @@
+{
+  "name": "react-inoutro",
+  "version": "1.0.0",
+  "description": "for react in and out animation",
+  "repository": "https://github.com/juyeong1260/react-inoutro",
+  "author": "juyeong1260",
+  "scripts": {
+    "build": "yarn build:esm | yarn build:tsc",
+    "build:esm": "node ./esbuild.config.mjs",
+    "build:tsc": "tsc",
+    "lint": "eslint --config eslint.config.js ./src --report-unused-disable-directives --max-warnings 0",
+    "codegen:schema": "get-graphql-schema http://localhost:3000/graphql > schema.graphql",
+    "codegen:relay": "relay-compiler"
+  },
+  "type": "module",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "devDependencies": {
+    "@eslint/compat": "^1.0.1",
+    "@eslint/js": "^9.3.0",
+    "@types/react": "^18.3.2",
+    "esbuild": "^0.21.3",
+    "eslint": "9.x",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "globals": "^15.3.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.10.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.3"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "files": [
+    "lib",
+    "package.json",
+    "src",
+    "README.md",
+    "tsconfig.json"
+  ],
+  "keywords": [
+    "react",
+    "animation",
+    "modal",
+    "collapse",
+    "transition"
+  ]
+}
